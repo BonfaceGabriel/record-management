@@ -80,7 +80,7 @@ CORS_ALLOWED_ORIGINS = [
   "http://127.0.0.1:8000",
   "http://localhost:8080",
   "http://localhost:8081",
-  "https://record-f3x22bm2x-jb-ogot.vercel.app"
+  "https://record-managent.onrender.com"
   
 ]
 
