@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 
 
 # Application definition
+from .DEFAULTS import DEFAULT_HEADERS
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -66,14 +67,16 @@ CORS_ALLOW_METHODS = (
     "PUT",
 )
 
-CORS_ALLOW_HEADERS = (
-    "accept",
-    "authorization",
-    "content-type",
-    "user-agent",
-    "x-csrftoken",
-    "x-requested-with",
-)
+CORS_ALLOW_HEADERS = DEFAULT_HEADERS
+
+# CORS_ALLOW_HEADERS = (
+#     "accept",
+#     "authorization",
+#     "content-type",
+#     "user-agent",
+#     "x-csrftoken",
+#     "x-requested-with",
+# )
 
 CORS_ALLOW_CREDENTIALS: True
 
