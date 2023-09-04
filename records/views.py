@@ -16,8 +16,7 @@ class RecordsViewSets(viewsets.ViewSet):
                            serializer = RecordSerializer(records, many=True)
                            result = serializer.data
                            response = Response({"status": status.HTTP_200_OK, "message": "Succesfull", "payload":result}, content_type ='application/json')
-                           response["Access-Control-Allow-Origin"] = "*"  # Replace with the actual domain
-                        #    response["Access-Control-Allow-Methods"] = "GET"
+                           response["Access-Control-Allow-Origin"] = "*"
                            response["Access-Control-Allow-Headers"] = "*"
 
                            return response  
