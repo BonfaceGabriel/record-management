@@ -67,7 +67,7 @@ CORS_ALLOW_METHODS = [
     "PATCH",
     "POST",
     "PUT",
-)
+]
 
 CORS_ALLOW_HEADERS = "*"
 # CORS_ALLOW_HEADERS = (
