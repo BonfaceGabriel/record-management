@@ -15,7 +15,12 @@ class RecordsViewSets(viewsets.ViewSet):
                            records = DigitalRoad.objects.all()
                            serializer = RecordSerializer(records, many=True)
                            result = serializer.data
-                           return Response({"status": status.HTTP_200_OK, "message": "Succesfull", "payload":result}, content_type ='application/json')
+                           response = Response({"status": status.HTTP_200_OK, "message": "Succesfull", "payload":result}, content_type ='application/json')
+                           response["Access-Control-Allow-Origin"] = "*"  # Replace with the actual domain
+                        #    response["Access-Control-Allow-Methods"] = "GET"
+                           response["Access-Control-Allow-Headers"] = "*"
+
+                           return response  
                    
                 except Exception as e:
                     print(e)
