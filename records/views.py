@@ -27,8 +27,25 @@ class RecordsViewSets(viewsets.ViewSet):
                                     "message": "Error occured during implementation",
                                     "payload": None})
        
-    # def records_form(request):
-    #     return
-    
-    # def records_delete(request):
-    #     return
+    def create_record(self, request): 
+            if request.method == 'POST':
+                serializer = RecordSerializer(data=request.data)
+                if serializer.is_valid():
+                        serializer.save()
+                        record = serializer.data
+                        response = Response({"status": status.HTTP_201_CREATED,"message": 'successfull', "payload" : record})
+                        return response
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def update_record(self, request, pk):
+          if request.method == 'PATCH':
+                try:
+                      record = DigitalRoad.objects.get(pk=pk)
+                except DigitalRoad.DoesNotExist:
+                      return Response(status=status.HTTP_404_NOT_FOUND)
+                
+                serializer = RecordSerializer(record, data=request.data, partial=True)
+                if serializer.is_valid():
+                      serializer.save()
+                      return Response(serializer.data)
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
