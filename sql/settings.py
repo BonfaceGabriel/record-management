@@ -114,13 +114,29 @@ WSGI_APPLICATION = 'sql.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'railway',
+    #     'USER': 'root',
+    #     'HOST': 'containers-us-west-48.railway.app',
+    #     'PORT': 6911,
+    #     'PASSWORD': '2GSJGG5vS9Ygbv4rsMHa'
+    # },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'Records',
+    #     'USER': 'gabriel',
+    #     'HOST': 'localhost',
+    #     'PORT': 3306,
+    #     'PASSWORD': '    '
+    # },
+     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'railway',
         'USER': 'root',
-        'HOST': 'containers-us-west-48.railway.app',
-        'PORT': 6911,
-        'PASSWORD': '2GSJGG5vS9Ygbv4rsMHa'
+        'HOST': 'viaduct.proxy.rlwy.net',
+        'PORT': 32494,
+        'PASSWORD': 'cf421HFbACDCCc4e2DE2h2HFDBeEEFDc'
     }
 }
 
