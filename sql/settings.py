@@ -88,7 +88,7 @@ CORS_ALLOWED_ORIGINS = [
   "http://localhost:8081",
   "https://record-managent.onrender.com"
   
-]
+] 
 
 ROOT_URLCONF = 'sql.urls'
 
