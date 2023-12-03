@@ -14,7 +14,7 @@ class DigitalRoad(models.Model):
         ('backbone', 'Backbone')
     )
 
-    id = models.AutoField(db_column='id') 
+    
     record_id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True) 
     region = models.TextField(db_column='Region', blank=True, null=True)  # Field name made lowercase.
     county = models.TextField(db_column='County', blank=True, null=True)  # Field name made lowercase.
