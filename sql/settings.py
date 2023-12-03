@@ -86,8 +86,9 @@ CORS_ALLOWED_ORIGINS = [
   "http://localhost:8080",
   "http://localhost:3000",
   "http://localhost:8081",
-  "https://record-managent.onrender.com",
-  "https://record-app-management.onrender.com"
+  "https://record-managent.onrender.com/",
+  "https://record-app-management.onrender.com/",
+  "https://ict-authority.onrender.com/"
   
 ]
 
