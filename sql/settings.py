@@ -86,7 +86,8 @@ CORS_ALLOWED_ORIGINS = [
   "http://localhost:8080",
   "http://localhost:3000",
   "http://localhost:8081",
-  "https://record-managent.onrender.com"
+  "https://record-managent.onrender.com",
+  "https://record-app-management.onrender.com"
   
 ]
 
@@ -123,22 +124,22 @@ DATABASES = {
     #     'PORT': 6911,
     #     'PASSWORD': '2GSJGG5vS9Ygbv4rsMHa'
     # },
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Records',
-        'USER': 'gabriel',
-        'HOST': 'localhost',
-        'PORT': 3306,
-        'PASSWORD': '    '
-    },
-    #  'default': {
+    # 'default': {
     #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'railway',
-    #     'USER': 'root',
-    #     'HOST': 'viaduct.proxy.rlwy.net',
-    #     'PORT': 32494,
-    #     'PASSWORD': 'cf421HFbACDCCc4e2DE2h2HFDBeEEFDc'
-    # }
+    #     'NAME': 'Records',
+    #     'USER': 'gabriel',
+    #     'HOST': 'localhost',
+    #     'PORT': 3306,
+    #     'PASSWORD': '    '
+    # },
+     'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'railway',
+        'USER': 'root',
+        'HOST': 'viaduct.proxy.rlwy.net',
+        'PORT': 32494,
+        'PASSWORD': 'cf421HFbACDCCc4e2DE2h2HFDBeEEFDc'
+    }
 }
 
 
