@@ -4,14 +4,14 @@ from .views import RecordsViewSets
 
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    # path('login/', views.login_user, name='login'),
-    path('logout/', views.logout_user, name='logout'),
-    path('register/', views.register_user, name='register'),
-    path('record/<str:pk>', views.record, name='record'),
-    path('delete-record/<str:pk>', views.delete_record, name='delete'),
-    path('add-record/', views.add_record, name='add'),
-    path('all-records/', RecordsViewSets.as_view({'get': 'records_list'}), name='all-records'),
+    # path('', views.home, name='home'),
+    # # path('login/', views.login_user, name='login'),
+    # path('logout/', views.logout_user, name='logout'),
+    # path('register/', views.register_user, name='register'),
+    # path('record/<str:pk>', views.record, name='record'),
+    # path('delete-record/<str:pk>', views.delete_record, name='delete'),
+    # path('add-record/', views.add_record, name='add'),
+    # path('all-records/', RecordsViewSets.as_view({'get': 'records_list'}), name='all-records'),
     path('create-record/', RecordsViewSets.as_view({'post': 'create_record'}), name='create-record'),
     path('publicwifi-count/', RecordsViewSets.as_view({'get': 'get_publicwifi_count'}), name='publicwifi-count'),
     path('publicwifi/', RecordsViewSets.as_view({'get': 'get_publicwifi'}), name='publicwifi'),
