@@ -60,16 +60,16 @@ CORS_ALLOW_HEADERS = "*"
 
 # CORS_ALLOW_CREDENTIALS: True
 
-# CORS_ALLOWED_ORIGINS = [
-# #   "http://127.0.0.1:8000",
-#   "http://localhost:8080",
-#   "http://localhost:3000",
-#   "http://localhost:8081",
-#   "https://record-managent.onrender.com",
-#   "https://record-app-management.onrender.com",
-#   "https://ict-authority.onrender.com"
+CORS_ALLOWED_ORIGINS = [
+
+  "http://localhost:8080",
+  "http://localhost:3000",
+  "http://localhost:8081",
+  "https://record-managent.onrender.com",
+  "https://record-app-management.onrender.com",
+  "https://ict-authority.onrender.com"
   
-# ]
+]
 
 ROOT_URLCONF = 'sql.urls'
 
