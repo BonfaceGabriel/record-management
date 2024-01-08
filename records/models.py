@@ -6,14 +6,14 @@ from django.contrib.auth.models import AbstractUser, BaseUserManager, Permission
 #digital-road model
 class DigitalRoad(models.Model):
     STATUS_CHOICES = [
-        ('complete', 'Complete'),
-        ('ongoing', 'Ongoing')
+        ('Complete', 'Complete'),
+        ('Ongoing', 'Ongoing')
     ]
 
     CHOICES = [
-        ('publicwifi', 'Public Wifi'),
-        ('lastmile', 'Last Mile'),
-        ('backbone', 'Backbone')
+        ('Public Wifi', 'Public Wifi'),
+        ('Last Mile', 'Last Mile'),
+        ('Backbone', 'Backbone')
     ]
 
     

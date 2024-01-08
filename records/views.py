@@ -47,9 +47,10 @@ class RecordsViewSets(viewsets.ViewSet):
                 serializer = RecordSerializer(record, data=request.data, partial=True)
                 if serializer.is_valid():
                       serializer.save()
-                      response =  Response(serializer.data)
-                      return response
+                      return Response(serializer.data)
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
 
 
     def get_publicwifi_count(self, request):
