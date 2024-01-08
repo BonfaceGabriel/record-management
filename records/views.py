@@ -34,6 +34,8 @@ class RecordsViewSets(viewsets.ViewSet):
                         serializer.save()
                         record = serializer.data
                         response = Response({"status": status.HTTP_201_CREATED,"message": 'successfull', "payload" : record})
+                        response["Access-Control-Allow-Origin"] = "*"
+                        response["Access-Control-Allow-Headers"] = "*"
                         return response
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -47,7 +49,10 @@ class RecordsViewSets(viewsets.ViewSet):
                 serializer = RecordSerializer(record, data=request.data, partial=True)
                 if serializer.is_valid():
                       serializer.save()
-                      return Response(serializer.data)
+                      response =  Response(serializer.data)
+                      response["Access-Control-Allow-Origin"] = "*"
+                      response["Access-Control-Allow-Headers"] = "*"
+                      return response
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -56,6 +61,8 @@ class RecordsViewSets(viewsets.ViewSet):
             if request.method == 'GET':
                   count = DigitalRoad.objects.filter(dsh_category= "Public Wi-Fi").count()
                   response = Response({"status": status.HTTP_200_OK, "message": "Succesfull", "payload":count}, content_type ='application/json')
+                  response["Access-Control-Allow-Origin"] = "*"
+                  response["Access-Control-Allow-Headers"] = "*"
                   return response
 
       except Exception as e:
@@ -71,6 +78,8 @@ class RecordsViewSets(viewsets.ViewSet):
                   serializer = RecordSerializer(list, many=True)
                   result=serializer.data
                   response = Response({"status": status.HTTP_200_OK, "message": "Succesfull", "payload":result}, content_type ='application/json')
+                  response["Access-Control-Allow-Origin"] = "*"
+                  response["Access-Control-Allow-Headers"] = "*"
                   return response
 
       except Exception as e:
@@ -85,6 +94,8 @@ class RecordsViewSets(viewsets.ViewSet):
             if request.method == 'GET':
                   count = DigitalRoad.objects.filter(dsh_category= 'lastmile').count()
                   response = Response({"status": status.HTTP_200_OK, "message": "Succesfull", "payload":count}, content_type ='application/json')
+                  response["Access-Control-Allow-Origin"] = "*"
+                  response["Access-Control-Allow-Headers"] = "*"
                   return response
 
       except Exception as e:
@@ -100,6 +111,8 @@ class RecordsViewSets(viewsets.ViewSet):
                   serializer = RecordSerializer(list, many=True)
                   result=serializer.data
                   response = Response({"status": status.HTTP_200_OK, "message": "Succesfull", "payload":result}, content_type ='application/json')
+                  response["Access-Control-Allow-Origin"] = "*"
+                  response["Access-Control-Allow-Headers"] = "*"
                   return response
 
       except Exception as e:
