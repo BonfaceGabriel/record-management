@@ -15,3 +15,5 @@ class DigitalRoadAdmin(admin.ModelAdmin):
     search_fields = ('name_of_site',)
 
 admin.site.register(DigitalRoad, DigitalRoadAdmin)
+
+

@@ -1,6 +1,7 @@
-from django.urls import path
+from django.urls import path, include
 from records import views
 from .views import RecordsViewSets
+
 
 
 urlpatterns = [
@@ -11,6 +12,8 @@ urlpatterns = [
     # path('record/<str:pk>', views.record, name='record'),
     # path('delete-record/<str:pk>', views.delete_record, name='delete'),
     # path('add-record/', views.add_record, name='add'),
+
+
     path('all-records/', RecordsViewSets.as_view({'get': 'records_list'}), name='all-records'),
     path('create-record/', RecordsViewSets.as_view({'post': 'create_record'}), name='create-record'),
     path('publicwifi-count/', RecordsViewSets.as_view({'get': 'get_publicwifi_count'}), name='publicwifi-count'),
