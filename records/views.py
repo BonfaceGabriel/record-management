@@ -50,6 +50,26 @@ class RecordsViewSets(viewsets.ViewSet):
                       return Response(serializer.data)
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+    def delete_record(self, request, pk):
+      if request.method == 'DELETE':
+            try:
+                  record = DigitalRoad.objects.get(pk=pk)
+                  record.delete()
+                  response = Response({"status": status.HTTP_200_OK, "message": "Record Deleted Succesfully"}, content_type ='application/json')
+                  return response
+            except DigitalRoad.DoesNotExist:
+                      return Response(status=status.HTTP_404_NOT_FOUND)
+
+
+            except Exception as e:
+                  print(e)
+                  return Response({"status": status.HTTP_501_NOT_IMPLEMENTED, 
+                                          "message": "Error occured during implementation",
+                                          "payload": None})
+
+           
+            
+
 
 
 

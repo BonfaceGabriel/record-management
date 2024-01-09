@@ -21,6 +21,7 @@ urlpatterns = [
     path('lastmile/', RecordsViewSets.as_view({'get': 'get_lastmile'}), name='lastmile'),
     path('lastmile-count/', RecordsViewSets.as_view({'get': 'get_lastmile_count'}), name='lastmile-count'),
     path('update-record/<str:pk>/', RecordsViewSets.as_view({'patch': 'update_record'}), name='update-record'),
+    path('delete-record/<str:pk>/', RecordsViewSets.as_view({'delete': 'delete_record'}), name='delete-record'),
 
     # path('login/', RecordsViewSets.as_view({'post': 'login_user'}), name='login'),
     # path('logout/', RecordsViewSets.as_view({'post': 'logout_user'}), name='logout'),
