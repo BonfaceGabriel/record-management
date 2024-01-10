@@ -18,6 +18,7 @@ urlpatterns = [
     path('create-record/', RecordsViewSets.as_view({'post': 'create_record'}), name='create-record'),
     path('publicwifi-count/', RecordsViewSets.as_view({'get': 'get_publicwifi_count'}), name='publicwifi-count'),
     path('publicwifi/', RecordsViewSets.as_view({'get': 'get_publicwifi'}), name='publicwifi'),
+    path('county/<str:county_name>', RecordsViewSets.as_view({'get': 'get_county_records'}), name='county'),
     path('lastmile/', RecordsViewSets.as_view({'get': 'get_lastmile'}), name='lastmile'),
     path('lastmile-count/', RecordsViewSets.as_view({'get': 'get_lastmile_count'}), name='lastmile-count'),
     path('update-record/<str:pk>/', RecordsViewSets.as_view({'patch': 'update_record'}), name='update-record'),
